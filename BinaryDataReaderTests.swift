@@ -80,10 +80,11 @@ class BinaryDataReaderTests: XCTestCase {
         XCTAssertEqual(try? reader.read() as Float64, 16.0)
         XCTAssertNil(try? reader.read() as Float64?)
     }
-    
+  
     func testReadNullTerminatedString() {
         let string = "Test string"
-        let bytes = Array(string.nulTerminatedUTF8)
+      var bytes = Array(string.utf8.map{ UInt8($0)})
+      bytes.append(0x0)
         let reader = BinaryDataReader(BinaryData(data: bytes + bytes + [0x0, 0x12]))
         
         XCTAssertEqual(try? reader.readNullTerminatedUTF8(), string)

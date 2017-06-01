@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name         = "BinarySwift3"
-  s.version      = "1.0.1"
+  s.version      = "1.0.2"
   s.summary      = "BinarySwift is a pure-swift library for parsing binary data."
 
   s.description  = <<-DESC

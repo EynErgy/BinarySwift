@@ -300,6 +300,7 @@
 					};
 					39EE444D1CBC542600C947A9 = {
 						CreatedOnToolsVersion = 7.3;
+						LastSwiftMigration = 0830;
 					};
 				};
 			};
@@ -623,6 +624,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.spinaldevelopment.BinarySwiftTests-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -636,6 +638,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.spinaldevelopment.BinarySwiftTests-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				SWIFT_VERSION = 3.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
