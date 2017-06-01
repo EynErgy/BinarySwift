@@ -8,11 +8,13 @@
 
 import Foundation
 
-func unsafeConversion<FROM, TO>(from: FROM) -> TO {
-  func ptr(fromPtr: UnsafePointer<FROM>) -> UnsafePointer<TO> {
-    return UnsafePointer<TO>(fromPtr)
+func unsafeConversion<FROM, TO>(_ from: FROM) -> TO {
+  func ptr(_ fromPtr: UnsafePointer<FROM>) -> UnsafePointer<TO> {
+    let rawPointer = UnsafeRawPointer(fromPtr)
+    let pointer = rawPointer.assumingMemoryBound(to: TO.self)
+    return pointer
   }
   
   var fromVar = from
-  return ptr(&fromVar).memory
+  return ptr(&fromVar).pointee
 }
