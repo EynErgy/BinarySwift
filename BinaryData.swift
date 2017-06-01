@@ -66,13 +66,13 @@ public struct BinaryData : ExpressibleByArrayLiteral {
    
    - remark: Data is copied.
    */
-  public init(data:Data, bigEndian: Bool = true) {
+  public init(data:NSData, bigEndian: Bool = true) {
     
     self.bigEndian = bigEndian
     
-    var mutableData = [UInt8](repeating: 0, count: data.count)
-    if data.count > 0 {
-      (data as NSData).getBytes(&mutableData, length: data.count)
+    var mutableData = [UInt8](repeating: 0, count: data.length)
+    if data.length > 0 {
+      (data as NSData).getBytes(&mutableData, length: data.length)
     }
     self.data = mutableData
   }
